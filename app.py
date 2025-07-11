@@ -11,7 +11,8 @@ app = Flask(__name__)
 CORS(app, origins=[
     "https://agri-scan-api.vercel.app",
     "http://localhost",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://agri-scan-ai.vercel.app"
 ])
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
