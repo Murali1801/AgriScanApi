@@ -5,11 +5,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=[
-    "https://agri-scan-ai.vercel.app",
-    r"^http://localhost(:[0-9]+)?$",
-    r"^https://localhost(:[0-9]+)?$"
-])
+CORS(app)  # Allow all origins
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
