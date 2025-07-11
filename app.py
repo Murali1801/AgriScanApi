@@ -3,9 +3,16 @@ import base64
 import requests
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()  # Load environment variables from .env
 
 app = Flask(__name__)
-CORS(app)  # Allow all origins
+CORS(app, origins=[
+    "https://agri-scan-api.vercel.app",
+    "http://localhost",
+    "http://localhost:3000"
+])
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
